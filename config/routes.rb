@@ -2,6 +2,17 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
+  api_options = {
+    constraints: { format: :json },
+    defaults:    { format: :json }
+  }
+
+  namespace :api, api_options  do
+    resources :weeks, only: [] do
+      resources :songs, only: [:index]
+    end
+  end
+
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
