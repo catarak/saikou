@@ -30,7 +30,6 @@ class UKOfficialChartsScraper
         end
 
         current_week = current_week - 1.week
-        still_scraping = false
       rescue OpenURI::HTTPError => the_error
         still_scraping = false
       end
