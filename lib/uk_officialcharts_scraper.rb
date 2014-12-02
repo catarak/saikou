@@ -13,8 +13,8 @@ class UKOfficialChartsScraper
     while (still_scraping) do
       begin
         current_chart = Nokogiri::HTML(open("#{@base_url}#{current_week.strftime("%Y-%m-%d")}"))
-        song_name = current_chart.css("table.chart.purple tr.entry.odd.first td.info div.infoHolder h3").text.strip
-        artist_name = current_chart.css("table.chart.purple tr.entry.odd.first td.info div.infoHolder h4").text.strip
+        song_name = current_chart.css("td.info div.infoHolder h3").first.text.strip
+        artist_name = current_chart.css("td.info div.infoHolder h4").first.text.strip
 
         #find or create by everything
         year = Year.find_or_create_by(number: current_week.year)
