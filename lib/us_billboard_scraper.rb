@@ -21,8 +21,13 @@ class UsBillboardScraper
         week = Week.find_or_create_by(number: current_week.strftime("%U").to_i, year_id: year.id)
 
         artist = Artist.find_or_create_by(name: artist_name)
-        song = Song.create(name: song_name, artist_id: artist.id)
-        Record.create(week_id: week.id, chart_id: @chart.id, song_id: song.id)
+        song = Song.find_or_create_by(name: song_name, artist_id: artist.id)
+
+        if Record.find_by(week_id: week.id, chart_id: @chart.id, song_id: song.id)
+          still_scraping = false
+        else 
+          Record.create(week_id: week.id, chart_id: @chart.id, song_id: song.id)
+        end
 
         current_week = current_week - 1.week
         if year.number == 2013
