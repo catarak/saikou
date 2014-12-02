@@ -11,23 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141201201421) do
+ActiveRecord::Schema.define(version: 20141202151639) do
 
   create_table "artists", force: true do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
-  create_table "chart_weeks", force: true do |t|
-    t.integer  "chart_id"
-    t.integer  "week_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "chart_weeks", ["chart_id"], name: "index_chart_weeks_on_chart_id"
-  add_index "chart_weeks", ["week_id"], name: "index_chart_weeks_on_week_id"
 
   create_table "charts", force: true do |t|
     t.string   "name"
@@ -44,15 +34,16 @@ ActiveRecord::Schema.define(version: 20141201201421) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "song_charts", force: true do |t|
-    t.integer  "song_id"
+  create_table "records", force: true do |t|
     t.integer  "chart_id"
+    t.integer  "week_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "song_id"
   end
 
-  add_index "song_charts", ["chart_id"], name: "index_song_charts_on_chart_id"
-  add_index "song_charts", ["song_id"], name: "index_song_charts_on_song_id"
+  add_index "records", ["chart_id"], name: "index_records_on_chart_id"
+  add_index "records", ["week_id"], name: "index_records_on_week_id"
 
   create_table "songs", force: true do |t|
     t.string   "name"
@@ -63,30 +54,11 @@ ActiveRecord::Schema.define(version: 20141201201421) do
 
   add_index "songs", ["artist_id"], name: "index_songs_on_artist_id"
 
-  create_table "week_countries", force: true do |t|
-    t.integer  "week_id"
-    t.integer  "country_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "week_countries", ["country_id"], name: "index_week_countries_on_country_id"
-  add_index "week_countries", ["week_id"], name: "index_week_countries_on_week_id"
-
-  create_table "week_years", force: true do |t|
-    t.integer  "week_id"
-    t.integer  "year_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "week_years", ["week_id"], name: "index_week_years_on_week_id"
-  add_index "week_years", ["year_id"], name: "index_week_years_on_year_id"
-
   create_table "weeks", force: true do |t|
     t.integer  "number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "year_id"
   end
 
   create_table "years", force: true do |t|
