@@ -12,10 +12,10 @@ class MusiclineScraper < ActiveRecord::Base
     @years.each do |year|
       year = Year.create(number: year)
       @week_nums.each do |week|
-        week = Week.create(number: week)
-        WeekCountry.create(week_id: week.id, country_id: @country.id)
-        YearWeek.create(year_id: year.id, week_id: week.id)
-        ChartWeek.create(chart_id: @chart.id, week_id: week.id)
+        @week = Week.create(number: @week, year_id: year.id)
+        # WeekCountry.create(week_id: week.id, country_id: @country.id)
+        # YearWeek.create(year_id: year.id, week_id: week.id)
+        # ChartWeek.create(chart_id: @chart.id, week_id: week.id)
       end
     end
   end
@@ -39,8 +39,9 @@ class MusiclineScraper < ActiveRecord::Base
       
       title = doc.css("tr:nth-child(2) .chart-position.titel p a").text
       song = Song.create(name: title, artist_id: artist.id)
+      Record.create(chart_id: @chart.id, week_id: @week.id, song_id: song.id)
 
-      SongChart.create(song_id: song.id, chart_id: @chart.id)
+      # SongChart.create(song_id: song.id, chart_id: @chart.id)
     end
   end
 
