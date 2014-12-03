@@ -19,6 +19,9 @@ Rails.application.routes.draw do
 
 
   get 'play_song' => 'songs#play', :as => "play_song"
+  
+  root 'maps#index'
+  resources :maps, only: [:index]
 
   root 'maps#index'
   resources :maps, only: [:index]

@@ -13,7 +13,7 @@ var countryStyle = {
     'opacity': 0.5
 };
 
-L.geoJson(subunits, {
+L.geoJson(countries, {
     onEachFeature: popup,
     style: countryStyle
 }).addTo(map);
