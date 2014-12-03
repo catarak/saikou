@@ -17,4 +17,5 @@
 // require countries.geo
 //= require subunits
 //= require date-helpers
+//= require sliders
 //= require maps
