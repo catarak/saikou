@@ -6,3 +6,18 @@
   width: 100%;
   height: 800px;
 }
+
+#year-slider, #week-slider {
+  width: 300px;
+}
+
+#year-number, #week-number {
+  border:0; 
+  color:#FF3399; 
+  font-weight:bold;
+  width: 100px;
+}
+
+label {
+  border: 0;
+}
