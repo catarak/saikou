@@ -13,5 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require countries.geo
+// require countries.geo
+//= require subunits
 //= require maps

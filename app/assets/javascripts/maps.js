@@ -1,3 +1,22 @@
+$(function() {
+  createSliders();
+
+});
+
+function createSliders() {
+  $("year-slider").slider({
+    min: 1955,
+    max: 2014,
+    value: 2014,
+    slide: changeYearLabel
+  });
+  $("#year-number").val( $("#year-slider").slider("value"));
+}
+
+function changeYearLabel(event, ui) {
+  $("#year-number").val( ui.value );
+}
+
 
 var map = L.map('map').setView([0, 0], 2);
 
@@ -13,7 +32,7 @@ var countryStyle = {
     'opacity': 0.5
 };
 
-L.geoJson(countries, {
+L.geoJson(subunits, {
     onEachFeature: popup,
     style: countryStyle
 }).addTo(map);
