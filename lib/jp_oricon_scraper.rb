@@ -1,5 +1,4 @@
 require 'open-uri'
-require 'date'
 
 class JpOriconScraper
 
@@ -31,6 +30,8 @@ class JpOriconScraper
       @db_date = Date.parse(@db_date.gsub(/./) { |m| symbol_replace.fetch(m,m) } )
     rescue OpenURI::HTTPError => the_error
       @db_date = @db_date - 7.days
+    rescue Exception => e  
+      binding.pry
     end
     
     #Creating the year and week
