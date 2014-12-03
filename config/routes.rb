@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   namespace :api, api_options  do
     resources :years, only: [], param: :number do
-      resources :weeks, only: [], param: :number do
+    resources :weeks, only: [], param: :number do
         resources :songs, only: [:index]
       end
     end
@@ -20,9 +20,6 @@ Rails.application.routes.draw do
 
   get 'play_song' => 'songs#play', :as => "play_song"
   
-  root 'maps#index'
-  resources :maps, only: [:index]
-
   root 'maps#index'
   resources :maps, only: [:index]
 
