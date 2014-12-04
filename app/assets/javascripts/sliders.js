@@ -17,7 +17,7 @@ function createWeekSlider() {
   $("#week-slider").slider({
     min: 0,
     max: 53,
-    value: currentWeek(),
+    value: currentWeek() - 1,
     slide: changeWeekLabel
   });
   var year = $("#year-slider").slider("value");

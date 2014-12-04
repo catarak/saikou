@@ -15,7 +15,8 @@
 //= require jquery-ui
 //= require turbolinks
 // require countries.geo
-//= require subunits
+// require subunits
+//= require countries
 //= require date-helpers
 //= require sliders
 //= require maps
