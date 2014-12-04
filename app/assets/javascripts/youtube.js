@@ -12,8 +12,7 @@ $(document).ready(function(){
       url: "/play_song", 
       data: {search_keyword: query}
     }).done(function(results){
-      debugger;
-      $("#search-results").html(results);
+      modal.open({content: results});
     });
   };
 
