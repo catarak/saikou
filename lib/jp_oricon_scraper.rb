@@ -31,7 +31,7 @@ class JpOriconScraper
     rescue OpenURI::HTTPError => the_error
       @db_date = @db_date - 7.days
     rescue Exception => e  
-      binding.pry
+      @date = @date + 7.days
     end
     
     #Creating the year and week
