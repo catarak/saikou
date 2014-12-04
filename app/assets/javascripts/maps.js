@@ -23,3 +23,14 @@ function popup(feature, layer) {
         layer.bindPopup(feature.properties.name);
     }
 }
+
+function getSongsForCurrentWeek() {
+  var year = $("#year-slider").slider("value");
+  var week = $("#week-slider").slider("value");
+  var url = "/api/years/2014/" + year + "/48/" + week
+  $.ajax(url, {
+
+  });
+
+
+}

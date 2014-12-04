@@ -10,8 +10,10 @@ Rails.application.routes.draw do
   }
 
   namespace :api, api_options  do
-    resources :weeks, only: [] do
-      resources :songs, only: [:index]
+    resources :years, only: [], param: :number do
+      resources :weeks, only: [], param: :number do
+        resources :songs, only: [:index]
+      end
     end
   end
 
