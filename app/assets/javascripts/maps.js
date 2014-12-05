@@ -120,7 +120,7 @@ function addCountryToSongsTable(countryProperties) {
     //source
     html = '<div class="country-container">' +
               '<strong>' + countryProperties.name +'</strong><br>' +
-              '<span class="song">'+ countryProperties.name +'</span><br>' +  
+              '<span class="song">'+ countryProperties.song +'</span><br>' +  
               '<span class="artist">'+ countryProperties.artist +'</span><br>' + 
               '<span class="chart">source: ' + countryProperties.chart + '</span>' +
            '</div>';
