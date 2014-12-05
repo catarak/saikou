@@ -56,6 +56,13 @@ var onEachFeature = function(feature, layer) {
             //layer.closePopup();
             //layer.unbindPopup(feature.properties.name);
         });
+        layer.on("click", function (e) {
+          var popupText = "<b>" + feature.properties.name +"</b><br>" + feature.properties.chart + "<br>"
+                          + feature.properties.song + "<br>" + feature.properties.artist
+          layer.bindPopup(popupText);
+          //var popup = L.popup().setLatLng(e.latlng)
+
+        });
     })(layer, feature.properties);
 };
  
@@ -80,7 +87,7 @@ $(function() {
 
 function getSongsForCurrentWeek() {
   var year = $("#year-slider").slider("value");
-  var week = $("#week-slider").slider("value");
+  var week = $("#week-slider").slider("value") - 1;
   var url = "/api/years/" + year + "/weeks/" + week + "/songs"
   $.getJSON( url, function( data ) {
     updateCountriesWithSongs(data)
@@ -91,10 +98,11 @@ function updateCountriesWithSongs(data) {
   countryLayerGroup.clearLayers();
 
   data.countries.forEach(function(country) {
-    addCountryLayer(country.name, highlightStyle); 
-    country.features.chart = country.charts[0].name
-    country.song = country.charts[0].song.name
-    country.artist = country.charts[0].song.artist
+    addCountryLayer(country.name, highlightStyle);
+    var countryProperties = countries[country.name].features[0].properties;
+    countryProperties.chart = country.charts[0].name
+    countryProperties.song = country.charts[0].song.name
+    countryProperties.artist = country.charts[0].song.artist
   });
 
   countryLayerGroup.addTo(map);
