@@ -118,7 +118,7 @@ function addCountryToSongsTable(countryProperties) {
     html = '<div class="country-container">' +
               '<span class="country-name">' + countryProperties.name +'</span><br>' +
               '<span class="song">'+ countryProperties.song +'</span><br>' +  
-              '<span class="artist">'+ countryProperties.artist +'</span><br>' + 
+              '<span class="artist">by '+ countryProperties.artist +'</span><br>' + 
               '<span class="chart">source: ' + countryProperties.chart + '</span>' +
            '</div>';
     $(".countries").append(html);
