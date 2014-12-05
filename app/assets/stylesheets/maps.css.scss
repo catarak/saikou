@@ -7,6 +7,12 @@ body {
   font-family: 'Lato', sans-serif !important;
 }
 
+@media (min-width: 1200px) {
+  .container {
+  width: 1400px;
+  }
+}
+
 #logo {
   width: 30%;
   height: auto;
@@ -15,6 +21,8 @@ body {
 }
 
 #map { 
+  margin-top: 55px;
+  margin-left: 30px;
   width: auto;
   height: 550px;
 }
@@ -45,7 +53,7 @@ body {
 }
 
 #week-label, #year-label {
-  font-style: italic;
+  text-transform: uppercase;
   color: #e8e0d8;
 }
 
@@ -66,7 +74,7 @@ p.slider-label {
 }
 
 .country-container {
-  margin: 20px 0;
+  margin: 20px 10px 20px 0;
   padding: 7px;
   background: rgba(42,75,129,.75);
   border-radius: 5px;
