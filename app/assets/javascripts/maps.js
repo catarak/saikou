@@ -1,6 +1,6 @@
 var map;
 var mapTileLayer;
-var countryLayerGroup = new L.LayerGroup();g
+var countryLayerGroup = new L.LayerGroup();
 
 var defaultStyle = {
     'color': '#000',
