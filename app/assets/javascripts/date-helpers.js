@@ -19,3 +19,7 @@ function weeksInCurrentYear() {
 function weeksInYear(year) {
     return moment().year(year).weeksInYear();
 }
+
+function currentYear() {
+  return moment().year()
+}
