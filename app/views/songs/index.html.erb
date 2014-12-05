@@ -1,0 +1,13 @@
+<h1>Songs#index</h1>
+<p>Find me in app/views/songs/index.html.erb</p>
+<script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"></script>
+
+
+<div id="search-results">
+  <!-- the embedded video should go here -->
+</div>
+
+<% @songs.each do |s| %>
+<div class="song"><%= s.artist.name %> - <%= s.name %></div>
+<% end %>
+

@@ -1,5 +1,4 @@
 require 'open-uri'
-require 'date'
 
 class JpOriconScraper
 
@@ -9,8 +8,7 @@ class JpOriconScraper
   end
 
   def scrape
-    # @date = date_of_recent("Monday")
-    @date = Date.new(2009,8,31)
+    @date = date_of_recent("Monday")
     @end_date = Date.new(2005,10,10)
     while @date > @end_date
       parse_oricon_page
@@ -32,7 +30,7 @@ class JpOriconScraper
       @db_date = Date.parse(@db_date.gsub(/./) { |m| symbol_replace.fetch(m,m) } )
     rescue OpenURI::HTTPError => the_error
       @db_date = @db_date - 7.days
-    rescue Exception => e
+    rescue Exception => e  
       @date = @date + 7.days
     end
     
