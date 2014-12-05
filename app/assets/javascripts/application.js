@@ -20,4 +20,6 @@
 //= require countries
 //= require date-helpers
 //= require sliders
+//= require modal
+//= require youtube
 //= require maps

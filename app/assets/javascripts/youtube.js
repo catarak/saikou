@@ -1,8 +1,10 @@
 $(document).ready(function(){
 
   // user clicks button with cursor
-  $(".song").click(function(){
-    var query = $(this).text();
+  $(".countries").on("click", ".country-container", function() {
+    var song = $(this).children(".song").text();
+    var artist = $(this).children(".artist").text();
+    var query = song + " " + artist;
     videoSearch(query);
   });
 

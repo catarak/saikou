@@ -107,9 +107,6 @@ function updateCountriesWithSongs(data) {
   });
 
   countryLayerGroup.addTo(map);
-
-  //add countries to table
-  addCountriesToSongsTable();
 }
 
 function addCountryToSongsTable(countryProperties) {
