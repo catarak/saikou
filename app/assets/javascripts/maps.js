@@ -38,7 +38,6 @@ function init() {
   }
   countryLayerGroup.addTo(map);
 
-
 }
 
 var onEachFeature = function(feature, layer) {

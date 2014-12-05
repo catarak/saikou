@@ -11,3 +11,11 @@ function toWeekString(date) {
 function currentWeek() {
     return moment().week();
 }
+
+function weeksInCurrentYear() {
+    return moment().weeksInYear();
+}
+
+function weeksInYear(year) {
+    return moment().year(year).weeksInYear();
+}

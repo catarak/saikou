@@ -1,6 +1,7 @@
 $(function() {
   createYearSlider();
   createWeekSlider();
+  getSongsForCurrentWeek();
 });
 
 function createYearSlider() {
@@ -16,7 +17,7 @@ function createYearSlider() {
 function createWeekSlider() {
   $("#week-slider").slider({
     min: 0,
-    max: 53,
+    max: weeksInCurrentYear(),
     value: currentWeek(),
     slide: changeWeekLabel
   });
@@ -32,7 +33,11 @@ function changeYearLabel(event, ui) {
   var year = ui.value
   var week = $("#week-slider").slider("value");
   var weekDayString = toWeekString(findNextSaturday(week, year));
-  $('#week-number').text(weekDayString);  
+  $('#week-number').text(weekDayString); 
+
+  $("#week-slider").slider("option","max", weeksInYear(year)); 
+
+  getSongsForCurrentWeek();
 }
 
 function changeWeekLabel(event, ui) {
@@ -40,5 +45,7 @@ function changeWeekLabel(event, ui) {
   var week = ui.value 
   var weekDayString = toWeekString(findNextSaturday(week, year));
   $('#week-number').text(weekDayString);
+
+  getSongsForCurrentWeek();
 }
 
