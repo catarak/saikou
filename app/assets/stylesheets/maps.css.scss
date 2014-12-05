@@ -2,9 +2,25 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body {
+  background: #333333 !important;
+}
+
+#logo {
+  width: 30%;
+  height: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
 #map { 
   width: 1025px;
   height: 550px; 
+}
+
+.years, .weeks {
+  padding-bottom: 20px;
+  padding-right: 10px;
 }
 
 #year-slider, #week-slider {
@@ -12,21 +28,33 @@
 }
 
 #year-number, #week-number {
-  border:0; 
-  color:#FF3399; 
-  font-weight:bold;
+  border: 0; 
+  color: #FF3399; 
+  font-weight: bold;
   width: 100px;
+}
+
+#year-number {
+  font-size: 20px;
+}
+
+#week-number {
+  font-size: 18px;
+}
+
+#week-label, #year-label {
+  font-style: italic;
+  color: #FFF;
 }
 
 label {
   border: 0;
 }
 
-#logo {
-  width: 50%;
-  height: auto;
-}
-
 p.slider-label {
   text-align: center;
+}
+
+.countries {
+  color: white;
 }

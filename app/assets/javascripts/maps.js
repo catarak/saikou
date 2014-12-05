@@ -4,7 +4,7 @@ var countryLayerGroup = new L.LayerGroup();
 
 var defaultStyle = {
     'color': '#000',
-    'weight': 1,
+    'weight': .3,
     'opacity': 0.5,
     fill: false
 };
@@ -13,8 +13,8 @@ var highlightStyle = {
     fill: true,
     weight: 2,
     color: '#FFF',
-    fillColor: '#F00',
-    fillOpacity: 0.7
+    fillColor: '#FFEB99',
+    fillOpacity: 0.5
 };
 
 function init() {
