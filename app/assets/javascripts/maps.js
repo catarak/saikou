@@ -95,6 +95,7 @@ function getSongsForCurrentWeek() {
 
 function updateCountriesWithSongs(data) {
   countryLayerGroup.clearLayers();
+  $(".countries").empty();
 
   data.countries.forEach(function(country) {
     addCountryLayer(country.name, highlightStyle);
@@ -102,9 +103,28 @@ function updateCountriesWithSongs(data) {
     countryProperties.chart = country.charts[0].name
     countryProperties.song = country.charts[0].song.name
     countryProperties.artist = country.charts[0].song.artist
+    addCountryToSongsTable(countryProperties);
   });
 
   countryLayerGroup.addTo(map);
+
+  //add countries to table
+  addCountriesToSongsTable();
+}
+
+function addCountryToSongsTable(countryProperties) {
+    //do all that magic here
+    //country
+    //song
+    //artist
+    //source
+    html = '<div class="country-container">' +
+              '<strong>' + countryProperties.name +'</strong><br>' +
+              '<span class="song">'+ countryProperties.name +'</span><br>' +  
+              '<span class="artist">'+ countryProperties.artist +'</span><br>' + 
+              '<span class="chart">source: ' + countryProperties.chart + '</span>' +
+           '</div>';
+    $(".countries").append(html);
 }
 
 

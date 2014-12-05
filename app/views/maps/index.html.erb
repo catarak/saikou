@@ -1,14 +1,40 @@
-<p>
-  <span>Year </span><span id="year-number"></span>
-</p>
-<div id="year-slider"></div>
-<p>
-  <span>Week of </span><span id="week-number"></span>
-</p>
-<div id="week-slider"></div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 ">
+      <%= image_tag "logo.png", id: "logo", class: "center-block" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+      
+    </div>
+    <div class="col-md-6">
+      <p class="slider-label">
+        <span>Year </span><span id="year-number"></span>
+      </p>
+      <div id="year-slider" class="center-block"></div>     
+    </div>
+    <div class="col-md-3 center-block">
+      <p class="slider-label">
+        <span>Week of </span><span id="week-number"></span>
+      </p>
+      <div id="week-slider" class="center-block"></div>   
+    </div>
+  </div>
+  <div class="row">
+    <div class="countries col-md-3">
+      <div class="country-container">
+
+        
+      </div>
+      
+    </div>
+    <div class="col-md-9">
+      <div id="map">
+      </div>
+    </div>
+    
+  </div>
+</div>
 
 <button id="get-songs">Click to get songs</button>
-
-<div id="map">
-  
-</div>
