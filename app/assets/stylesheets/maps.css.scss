@@ -55,10 +55,35 @@ p.slider-label {
   text-align: center;
 }
 
+.ui-slider .ui-slider-handle {
+  color: #e8e0d8;
+}
+
 .countries {
   color: #e8e0d8;
 }
 
-.ui-slider .ui-slider-handle {
-  color: #e8e0d8;
+.country-container {
+  margin: 15px 0;
+  padding: 5px;
+  background: #2a4b81;
+  -webkit-box-shadow: 0 0 5px #2a4b81,
+                      0 0 10px #2a4b81,
+                      0 0 15px #2a4b81;
+  box-shadow: 
+              0 0 5px #2a4b81,
+              0 0 10px #2a4b81,
+              0 0 15px #2a4b81;
+  border-radius: 5px;
+}
+
+.country-name {
+  font-style: oblique;
+  font-size: large;
+}
+
+.chart {
+  // display: block;
+  // float: right;
+  // font-size: small-caps;
 }
