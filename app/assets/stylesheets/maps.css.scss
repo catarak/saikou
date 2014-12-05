@@ -4,6 +4,7 @@
 
 body {
   background: #333333 !important;
+  font-family: 'Lato', sans-serif !important;
 }
 
 #logo {
@@ -65,25 +66,18 @@ p.slider-label {
 
 .country-container {
   margin: 15px 0;
-  padding: 5px;
+  padding: 7px;
   background: #2a4b81;
-  -webkit-box-shadow: 0 0 5px #2a4b81,
-                      0 0 10px #2a4b81,
-                      0 0 15px #2a4b81;
-  box-shadow: 
-              0 0 5px #2a4b81,
-              0 0 10px #2a4b81,
-              0 0 15px #2a4b81;
   border-radius: 5px;
 }
 
 .country-name {
-  font-style: oblique;
+  text-transform: uppercase;
   font-size: large;
 }
 
 .chart {
-  // display: block;
-  // float: right;
-  // font-size: small-caps;
+  display: block;
+  float: right;
+  font-size: small;
 }
