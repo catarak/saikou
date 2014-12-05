@@ -24,7 +24,7 @@ body {
 }
 
 #year-slider, #week-slider {
-  width: 300px;
+  width: auto;
 }
 
 #year-number, #week-number {
@@ -44,7 +44,7 @@ body {
 
 #week-label, #year-label {
   font-style: italic;
-  color: #FFF;
+  color: #e8e0d8;
 }
 
 label {
@@ -56,5 +56,9 @@ p.slider-label {
 }
 
 .countries {
-  color: white;
+  color: #e8e0d8;
+}
+
+.ui-slider .ui-slider-handle {
+  color: #e8e0d8;
 }

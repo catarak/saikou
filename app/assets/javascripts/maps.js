@@ -19,11 +19,11 @@ var highlightStyle = {
 
 function init() {
   map = new L.Map('map', {
-      // scrollWheelZoom: false,
-      // touchZoom: false,
-      // doubleClickZoom: false,
-      // zoomControl: false,
-      // dragging: false
+      scrollWheelZoom: false,
+      touchZoom: false,
+      doubleClickZoom: false,
+      zoomControl: false,
+      dragging: false
   }).setView([20, 0], 2);
 
   mapTileLayer = new L.TileLayer('http://{s}.tiles.mapbox.com/v3/ctarakajian.kd10e6g3/{z}/{x}/{y}.png', {
