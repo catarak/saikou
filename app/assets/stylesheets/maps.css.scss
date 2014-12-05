@@ -30,7 +30,8 @@ body {
 
 #year-number, #week-number {
   border: 0; 
-  color: #FF3399; 
+  /*color: #FF3399; */
+  color: #B31998;
   font-weight: bold;
   width: 100px;
 }
@@ -81,4 +82,5 @@ p.slider-label {
   display: block;
   float: right;
   font-size: small;
+  color: #808080 ;
 }
