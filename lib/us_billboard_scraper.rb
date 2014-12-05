@@ -23,11 +23,12 @@ class UsBillboardScraper
         artist = Artist.find_or_create_by(name: artist_name)
         song = Song.find_or_create_by(name: song_name, artist_id: artist.id)
 
-        if Record.find_by(week_id: week.id, chart_id: @chart.id, song_id: song.id)
-          still_scraping = false
-        else 
-          Record.create(week_id: week.id, chart_id: @chart.id, song_id: song.id)
-        end
+        # if Record.find_by(week_id: week.id, chart_id: @chart.id, song_id: song.id)
+        #   still_scraping = false
+        # else 
+        #   Record.create(week_id: week.id, chart_id: @chart.id, song_id: song.id)
+        # end
+        Record.find_or_create_by(week_id: week.id, chart_id: @chart.id, song_id: song.id)
 
         current_week = current_week - 1.week
       rescue OpenURI::HTTPError => the_error
