@@ -12,8 +12,6 @@ class MusiclineScraper
   def parse
     @years = (1959..2014)
     @week_nums = (1..53)
-    # @years = (2013..2014)
-    # @week_nums = [47, 50]
 
     base_url = "http://www.musicline.de/de/charts/single?page=0&week=&year="
 

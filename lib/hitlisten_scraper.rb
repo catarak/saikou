@@ -12,8 +12,6 @@ class HitlistenScraper
   def parse
     @years = (2001..2014)
     @week_nums = (1..53)
-    # @years = [2009, 2013, 2014]
-    # @week_nums = [47, 52, 53]
 
     base_url = "http://www.hitlisten.nu/default.asp?w=&y=&list=a40"
 
