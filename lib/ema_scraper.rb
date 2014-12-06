@@ -1,7 +1,7 @@
 require 'date'
 require 'open-uri'
 
-class EMAScraper
+class EmaScraper
 
   def initialize
     @country = Country.find_or_create_by(name: "South Africa")
