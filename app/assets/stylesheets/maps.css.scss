@@ -74,10 +74,9 @@ p.slider-label {
 }
 
 .country-container {
+  position: relative;
   margin: 20px 10px 20px 0;
-  padding: 7px;
-  background: rgba(42,75,129,.75);
-  border-radius: 5px;
+  cursor: pointer;
 }
 
 .country-name {
@@ -91,4 +90,33 @@ p.slider-label {
   float: right;
   font-size: small;
   color: #808080 ;
+}
+
+.country-info {
+  padding: 7px;
+  background: rgba(42,75,129,.75);
+  border-radius: 5px;
+}
+
+.play-overlay {
+  position: absolute;
+  border-radius: 5px;
+  background: rgba(201,201,201, .50);
+  width: 100%;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  display: inline-block;
+  // transform: translate(0%, -318%);
+  // transform: scale(2.0);
+}
+
+.play-overlay span {
+  position: relative;
+  left: 42%;
+  display: inline;
+  line-height: 80px;
+  vertical-align: middle;
+  font-size: 40px;
 }

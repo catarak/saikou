@@ -122,12 +122,16 @@ function addCountryToSongsTable(countryProperties) {
     //artist
     //source
     html = '<div class="country-container">' +
+              '<div class="country-info">' + 
               '<span class="country-name">' + countryProperties.name +'</span><br>' +
               '<span class="song">'+ countryProperties.song +'</span><br>' +  
               '<span class="artist">by '+ countryProperties.artist +'</span><br>' + 
               '<span class="chart">source: ' + countryProperties.chart + '</span>' +
+              '</div>' + 
+              '<div class="play-overlay"><span class="glyphicon glyphicon-play-circle"></span></div>' + 
            '</div>';
     $(".countries").append(html);
+    $(".play-overlay").hide();
 }
 
 

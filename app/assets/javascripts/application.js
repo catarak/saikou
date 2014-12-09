@@ -22,4 +22,5 @@
 //= require sliders
 //= require modal
 //= require youtube
+//= require play-button
 //= require maps
