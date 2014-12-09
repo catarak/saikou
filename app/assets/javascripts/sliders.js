@@ -1,7 +1,10 @@
 $(function() {
   createYearSlider();
   createWeekSlider();
-  getSongsForCurrentWeek();
+
+  var week = $("#week-slider").slider("value");
+  var year = $("#year-slider").slider("value");
+  getSongsForCurrentWeek(week, year);
 });
 
 function createYearSlider() {
@@ -42,7 +45,7 @@ function changeYearLabel(event, ui) {
     $("#week-slider").slider("option","max", weeksInYear(year)); 
   }
 
-  getSongsForCurrentWeek();
+  getSongsForCurrentWeek(week, year);
 }
 
 function changeWeekLabel(event, ui) {
@@ -51,6 +54,6 @@ function changeWeekLabel(event, ui) {
   var weekDayString = toWeekString(findNextSaturday(week, year));
   $('#week-number').text(weekDayString);
 
-  getSongsForCurrentWeek();
+  getSongsForCurrentWeek(week, year);
 }
 

@@ -84,18 +84,24 @@ $(function() {
   });
 });
 
-function getSongsForCurrentWeek() {
-  var year = $("#year-slider").slider("value");
-  var week = $("#week-slider").slider("value") - 1;
-  var url = "http://saikou-api.herokuapp.com/api/v1/years/" + year + "/weeks/" + week + "/songs"
+function getSongsForCurrentWeek(week, year) {
+  // var year = $("#year-slider").slider("value");
+  // var week = $("#week-slider").slider("value") - 1;
+  var url = "http://saikou-api.herokuapp.com/api/v1/years/" + year + "/weeks/" + (week - 1) + "/songs"
   $.getJSON( url, function( data ) {
     updateCountriesWithSongs(data)
+  }).error(function() {
+    clearAllCountries();
   });
 }
 
-function updateCountriesWithSongs(data) {
+function clearAllCountries() {
   countryLayerGroup.clearLayers();
   $(".countries").empty();
+}
+
+function updateCountriesWithSongs(data) {
+  clearAllCountries();
 
   data.countries.forEach(function(country) {
     addCountryLayer(country.name, highlightStyle);
