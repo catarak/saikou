@@ -1,3 +1,6 @@
+var MAX_YEAR = currentYear();
+var MIN_YEAR = 1958;
+
 $(function() {
   createYearSlider();
   createWeekSlider();
@@ -5,11 +8,13 @@ $(function() {
   var week = $("#week-slider").slider("value");
   var year = $("#year-slider").slider("value");
   getSongsForCurrentWeek(week, year);
+
+  randomDateListener();
 });
 
 function createYearSlider() {
   $("#year-slider").slider({
-    min: 1955,
+    min: 1958,
     max: currentYear(),
     value: currentYear(),
     slide: changeYearLabel
@@ -55,5 +60,9 @@ function changeWeekLabel(event, ui) {
   $('#week-number').text(weekDayString);
 
   getSongsForCurrentWeek(week, year);
+}
+
+function randomDateListener() {
+  
 }
 
