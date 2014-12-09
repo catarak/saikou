@@ -87,7 +87,7 @@ $(function() {
 function getSongsForCurrentWeek() {
   var year = $("#year-slider").slider("value");
   var week = $("#week-slider").slider("value") - 1;
-  var url = "/api/years/" + year + "/weeks/" + week + "/songs"
+  var url = "http://saikou-api.herokuapp.com/api/v1/years/" + year + "/weeks/" + week + "/songs"
   $.getJSON( url, function( data ) {
     updateCountriesWithSongs(data)
   });
