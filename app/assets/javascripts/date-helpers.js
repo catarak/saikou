@@ -1,7 +1,7 @@
 moment().format();
 
 function findNextSaturday(week, year) {
-    return moment().year(year).week(week - 1).day("Saturday");
+    return moment().year(year).week(week).day("Saturday");
 }
 
 function toWeekString(date) {
@@ -9,7 +9,7 @@ function toWeekString(date) {
 }
 
 function currentWeek() {
-    return moment().week() - 1;
+    return moment().week();
 }
 
 function weeksInCurrentYear() {
