@@ -9,12 +9,27 @@ var defaultStyle = {
     fill: false
 };
 
+function findRandomHighlight(){
+  var highlights = ['#FF82EE', '#5BFFE9', '#428DFF', '#C3F73A', '#3D11FF']
+  return highlights[Math.floor(Math.random() * highlights.length)]
+};
+
+function returnHighlightStyle(){
+  return {
+    fill: true,
+    weight: 2,
+    color: '#FFF',
+    fillColor: findRandomHighlight(),
+    fillOpacity: 0.8
+  }
+}
+
 var highlightStyle = {
     fill: true,
     weight: 2,
     color: '#FFF',
-    fillColor: '#FFEB99',
-    fillOpacity: 0.5
+    fillColor: findRandomHighlight(),
+    fillOpacity: 0.8
 };
 
 function init() {
@@ -104,7 +119,7 @@ function updateCountriesWithSongs(data) {
   clearAllCountries();
 
   data.countries.forEach(function(country) {
-    addCountryLayer(country.name, highlightStyle);
+    addCountryLayer(country.name, returnHighlightStyle());
     var countryProperties = countries[country.name].features[0].properties;
     countryProperties.chart = country.charts[0].name
     countryProperties.song = country.charts[0].song.name
