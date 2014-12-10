@@ -131,14 +131,26 @@ function addCountryToSongsTable(countryProperties) {
               '<div class="play-overlay"><span class="glyphicon glyphicon-play-circle"></span></div>' + 
            '</div>';
     $(".countries").append(html);
+    var colorIndex = 0
+    $('.country-info').each(function() {
+      $(this).css('background',incrementingColor(colorIndex));
+      if (colorIndex < 6) {
+        colorIndex += 1;
+      } else {
+        colorIndex = 0;
+      }
+    });
     $(".play-overlay").hide();
 }
 
-
 init();
 
+var safeColors = ['3D11FF','FF82EE','00e20f','f9740e',];
 
-
+var incrementingColor = function(colorIndex){
+  var color = safeColors[colorIndex];
+  return "#"+color;
+};
 
 
 
