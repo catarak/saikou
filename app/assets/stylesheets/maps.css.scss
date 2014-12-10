@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body {
-  background: #333333 !important;
+  background: #141414 !important;
   font-family: 'Lato', sans-serif !important;
 }
 
@@ -14,22 +14,23 @@ body {
 }
 
 #logo {
-  width: 30%;
+  width: 90%;
   height: auto;
-  padding-top: 20px;
+  padding-top: 25px;
   padding-bottom: 30px;
 }
 
 #map { 
-  margin-top: 55px;
-  margin-left: 30px;
-  width: auto;
-  height: 550px;
+  width: 65%;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 35%;
+  z-index: 0;
 }
 
 .years, .weeks {
-  padding-bottom: 20px;
-  padding-right: 10px;
+  padding: 0 10px 25px 0px;
 }
 
 #year-slider, #week-slider {
@@ -44,25 +45,26 @@ body {
   width: 100px;
 }
 
-#year-number {
+#week-number, #year-number {
+  font-family: 'Lato Thin', sans-serif;
+  font-weight: 100;
   font-size: 20px;
-}
-
-#week-number {
-  font-size: 18px;
+  color: #FFFFFF;
 }
 
 #week-label, #year-label {
+  font-family: 'Lato Ultra Bold', sans-serif;
+  font-weight: 900;
+  font-size: 20px;
   text-transform: uppercase;
-  color: #e8e0d8;
+  color: #C3F73A;
 }
 
 label {
   border: 0;
 }
 
-p.slider-label {
-  text-align: center;
+.slider-label {
 }
 
 .ui-slider .ui-slider-handle {
@@ -75,26 +77,41 @@ p.slider-label {
 
 .country-container {
   position: relative;
-  margin: 20px 10px 20px 0;
+  margin: 20px 10px 22px 0;
   cursor: pointer;
 }
 
 .country-name {
   text-transform: uppercase;
-  font-size: large;
+  font-family: "Lato Bold",sans-serif;
+  font-weight: 900;
+  font-size: 18px;
+}
+
+.song {
+  font-family: "Lato Bold",sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.artist {
+  font-family: "Lato Thin",sans-serif;
+  font-weight: 100;
+  font-size: 14px;
 }
 
 .chart {
-  padding-top: 6px;
+  padding-top: 9px;
   display: block;
   float: right;
-  font-size: small;
-  color: #808080 ;
+  color: #fff;
+  font-size: 12px;
 }
 
 .country-info {
-  padding: 7px;
-  background: rgba(42,75,129,.75);
+  padding: 10px 10px 10px 10px;
+  border: 1px solid white;
+  background: #FF82EE;
   border-radius: 5px;
 }
 
@@ -120,3 +137,44 @@ p.slider-label {
   vertical-align: middle;
   font-size: 60px;
 }
+
+.sidebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 35%;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  background: #141414;
+  border-right: 8px ridge #42F2F7;
+  box-shadow: -1px 0 2px rgba(0,0,0,0.05);
+}
+
+.navbar-default {
+  background-color: #141414;
+  border-color: #141414;
+}
+
+.random {
+  width: 100%;
+  text-align: center;
+  padding-bottom: 5px;
+}
+
+#random-date {
+  background-color: #3D11FF;
+  border: 1px solid #FFF;
+  width: 200px;
+  height: 40px;
+  font-family: "Lato Ultra Bold", sans-serif;
+  font-size: 15px;
+  color: #FFF;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+#random-date:focus {
+  outline: none;
+}
+

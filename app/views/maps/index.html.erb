@@ -1,34 +1,29 @@
-<div class="container">
-  <div class="row">
+<div class="sidebar">
+  <div class="container-fluid">
+
     <div class="col-md-12 ">
       <%= image_tag "logo_transparent.png", id: "logo", class: "center-block" %>
     </div>
-  </div>
 
-  <div class="row">
-    <div class="col-md-3 years">
-      <div class="years">
-        <p class="slider-label">
-          <span id="year-label">Year </span><br><span id="year-number"></span>
-        </p>
-        <div id="year-slider" class="center-block"></div> 
-      </div> 
-      <div class="weeks">
-        <p class="slider-label">
-          <span id="week-label">Week of </span><br><span id="week-number"></span>
-        </p>
-        <div id="week-slider" class="center-block"></div>   
-      </div>
-      <div class="random">
-        <button id="random-date" class="btn btn-default">Random Date</button>
-      </div> 
-      <div class="countries">
-      
-      </div>  
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 years">
+      <p class="slider-label">
+        <span id="year-label">Year </span><span id="year-number"></span>
+      </p>
+      <div id="year-slider" class="center-block"></div> 
     </div>
-    <div class="col-md-9">
-      <div id="map">
-      </div>
+  
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 weeks">
+      <p class="slider-label">
+        <span id="week-label">Week of </span><span id="week-number"></span>
+      </p>
+      <div id="week-slider" class="center-block"></div> 
     </div>
+
+    <div class="random">
+      <button id="random-date" class="btn btn-default">Random Date</button>
+    </div> 
+    
+    <div class="countries"></div>
   </div>
 </div>
+<div id="map"></div>
