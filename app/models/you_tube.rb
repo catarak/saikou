@@ -12,7 +12,7 @@ class YouTube
   end
 
   def get_vid
-    videos = self.client.videos_by(:query => [self.search_term]).videos
+    videos = self.client.videos_by(:query => self.search_term).videos
     videos.empty? ? RETURN_TO_SENDER : get_embedded_vid(videos)
   end
 
