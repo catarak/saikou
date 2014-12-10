@@ -12,9 +12,9 @@ var defaultStyle = {
 var highlightStyle = {
     fill: true,
     weight: 2,
-    color: '#FFF',
-    fillColor: '#FFEB99',
-    fillOpacity: 0.5
+    color: '#FFFF00',
+    fillColor: '#FFFF00',
+    fillOpacity: 1,
 };
 
 function init() {
