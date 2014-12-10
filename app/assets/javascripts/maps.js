@@ -128,7 +128,7 @@ function addCountryToSongsTable(countryProperties) {
               '<span class="artist">by '+ countryProperties.artist +'</span><br>' + 
               '<span class="chart">source: ' + countryProperties.chart + '</span>' +
               '</div>' + 
-              '<div class="play-overlay"><span class="glyphicon glyphicon-play-circle"></span></div>' + 
+              '<div class="play-overlay"><div class="glyphicon glyphicon-play-circle"></div></div>' + 
            '</div>';
     $(".countries").append(html);
     var colorIndex = 0
